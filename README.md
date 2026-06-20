@@ -1,1 +1,1 @@
-yep
+Codes for all basic abstract data structures and algorithms taught in COMP2123. All written in Java.
