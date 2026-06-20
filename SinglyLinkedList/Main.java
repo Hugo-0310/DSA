@@ -11,9 +11,8 @@ public class Main {
         sll.insertBefore(node2, node1);
         sll.insertAfter(node2, node3);
         sll.insertAfter(node3, node4);
-        sll.traverse();
         sll.delete(node4);
-        System.out.println(sll.traverse_1(node1));
+        System.out.println(sll.traverse(node1));
     }
 }
 

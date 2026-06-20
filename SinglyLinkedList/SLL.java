@@ -103,23 +103,15 @@ public class SLL{
         size -= 1;
     }
 
-    public void traverse(){
-        Node curr_node = this.head;
- 
-        while(curr_node != null){
-            System.out.print(curr_node.element);
-            curr_node = curr_node.nextNode;
-        }
-    }
 
-    public String traverse_1(Node startNode){
+    public String traverse(Node startNode){
         if(startNode.nextNode == null){
             String ele = String.valueOf(startNode.element);
             return ele;
         }else{
             int ele = startNode.element;
             startNode = startNode.nextNode;
-            return ele+"-"+traverse_1(startNode);
+            return ele+"-"+traverse(startNode);
         }
     }
 }
