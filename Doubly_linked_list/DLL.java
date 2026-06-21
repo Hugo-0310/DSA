@@ -17,7 +17,16 @@ public class DLL {
     }
 
     public void insertBefore(Node location, Node newNode){
-        
+        if(location.equals(this.head)){
+            location.prevNode = newNode;
+            this.head = newNode;
+        }else{
+            Node temp = location.prevNode;
+            location.prevNode = newNode;
+            newNode.nextNode = location;
+            newNode.prevNode = temp;
+        }
+        size += 1;
     }
     //after's
     public Node after(Node location){
