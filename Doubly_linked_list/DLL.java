@@ -34,7 +34,16 @@ public class DLL {
     }
 
     public void insertAfter(Node location, Node newNode){
-
+        if(location.equals(this.tail)){
+            location.nextNode = newNode;
+            this.tail = newNode;
+        }else{
+            Node temp = location.nextNode;
+            location.nextNode = newNode;
+            newNode.prevNode = location;
+            newNode.nextNode = temp;
+        }
+        size += 1;
     }
     //delete
     public void delete(Node location){}
