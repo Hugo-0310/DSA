@@ -46,13 +46,40 @@ public class DLL {
         size += 1;
     }
     //delete
-    public void delete(Node location){}
+    public void delete(Node location){
+        if(this.size == 1){
+            //update both head and tail
+            this.head = null;
+            this.tail = null;
+        }else{
+            if(location.equals(this.head)){
+                this.head = location.nextNode;
+                this.head.prevNode = null;
+                location.nextNode = null;
+            }else if(location.equals(this.tail)){
+                this.tail = location.prevNode;
+                this.tail.nextNode = null;
+                location.prevNode = null;
+            }else{
+                location.prevNode.nextNode = location.nextNode;
+                location.nextNode.prevNode = location.prevNode;
+                location.nextNode = null;
+                location.prevNode = null;
+            }
+        }
+
+        this.size -= 1;
+    }
     //size
     public int getSize(){
-        return 1;
+        return this.size;
     }
     //traverse
-    public String traverse(){
-        return null;
+    public String traverse(Node startNode){
+        if(startNode.nextNode == null){
+            return String.valueOf(startNode.element);
+        }else{
+            return startNode.element + "-" + traverse(startNode.nextNode);
+        }
     }
 }
