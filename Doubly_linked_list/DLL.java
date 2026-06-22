@@ -12,8 +12,8 @@ public class DLL {
     }
 
     //before's
-    public Node before(Node location){
-        return location.prevNode;
+    public int before(Node location){
+        return location.prevNode.element;
     }
 
     public void insertBefore(Node location, Node newNode){
@@ -25,17 +25,19 @@ public class DLL {
             location.prevNode = newNode;
             newNode.nextNode = location;
             newNode.prevNode = temp;
+            temp.nextNode = newNode;
         }
         size += 1;
     }
     //after's
-    public Node after(Node location){
-        return location.nextNode;
+    public int after(Node location){
+        return location.nextNode.element;
     }
 
     public void insertAfter(Node location, Node newNode){
         if(location.equals(this.tail)){
             location.nextNode = newNode;
+            newNode.prevNode = location;
             this.tail = newNode;
         }else{
             Node temp = location.nextNode;
