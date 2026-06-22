@@ -11,7 +11,8 @@ public class Main {
     dll.insertAfter(node1, node3);
     dll.insertBefore(node3, node2);
     dll.insertAfter(node3, node4);
-    System.out.println(dll.before(node3));
-    System.out.println(dll.traverse(node1));
+    dll.delete(node3);  
+    System.out.println(dll.size);
+    System.out.println(dll.traverse(node3));
     }
 }
