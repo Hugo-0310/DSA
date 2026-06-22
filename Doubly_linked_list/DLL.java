@@ -72,10 +72,14 @@ public class DLL {
     }
     //size
     public int getSize(){
-        return 1;
+        return this.size;
     }
     //traverse
-    public String traverse(){
-        return null;
+    public String traverse(Node startNode){
+        if(startNode.nextNode == null){
+            return String.valueOf(startNode.element);
+        }else{
+            return startNode.element + "-" + traverse(startNode.nextNode);
+        }
     }
 }
