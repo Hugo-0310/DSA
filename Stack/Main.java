@@ -14,5 +14,6 @@ public class Main {
         stack.capacity();
         stack.size();
         System.out.println(stack.traverse(0));
+        
     }
 }
