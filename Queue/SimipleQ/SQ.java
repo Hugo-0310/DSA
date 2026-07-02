@@ -1,6 +1,6 @@
 package Queue.SimipleQ;
 
-public class SQ {
+public class SQ <t>{
     int N; //array capacity
     int n; //queue size/next available cell's index
     int[] arr;
