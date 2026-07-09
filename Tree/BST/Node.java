@@ -10,4 +10,6 @@ public class Node {
         this.element = element;
         this.parent = this.left =  this.right = null;
     }
+
+    
 }

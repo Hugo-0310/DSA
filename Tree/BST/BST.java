@@ -9,20 +9,23 @@ public class BST {
         this.root = root;
     }
 
-    public void insert(Node node){
-        //no root
-        Node curr = this.root;
-        while(! isExternal(curr)){
-            if(node.element < curr.element){
-                curr = curr.left;
+    public Node insert(Node root, Node newNode){
+        if(root == null){
+            this.size += 1;
+            return newNode;
+        }else{
+            if(root.element > newNode.element){
+                //make sure to return the root.left if not changed
+                root.left = insert(root.left, newNode);
+                root.left.parent = root;
             }else{
-                curr = curr.right;
+                root.right = insert(root.right, newNode);
+                root.right.parent = root;
             }
+            return root;
         }
-
-        //curr is the external node where the new node will be its child.
-        if(curr.element)
     }
+
 
     public boolean isExternal(Node node){
         return (node.left == null) & (node.right == null);
