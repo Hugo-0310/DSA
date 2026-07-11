@@ -26,6 +26,38 @@ public class BST {
         }
     }
 
+    public Node delete(Node node){
+        if(isExternal(node)){
+            if(node.parent.left.equals(node)){
+                node.parent.left = null;
+            }else{
+                node.parent.right = null;
+            }
+            node.parent = null;
+            this.size -= 1;
+        }else{
+            //if internal
+            
+        }
+        return node;
+    }
+
+    public String inorder(Node root){
+        if(isExternal(root)){
+            return String.valueOf(root.element);
+        }else{
+            if(root.left != null & root.right != null){
+                return inorder(root.left)+"-"+String.valueOf(root.element)+"-"+inorder(root.right);
+            }else{
+                if(root.left != null){
+                    return inorder(root.left)+"-"+String.valueOf(root.element);
+                }else{
+                    return String.valueOf(root.element)+"-"+inorder(root.right);
+                }
+            }
+        }
+    }
+
 
     public boolean isExternal(Node node){
         return (node.left == null) & (node.right == null);

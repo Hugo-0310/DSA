@@ -8,12 +8,12 @@ public class Main {
         Node node4 = new Node(4);
         Node node5 = new Node(5);
 
-        BST bst = new BST(node1);
-        bst.insert(node1, node2);
-        bst.insert(node1, node3);
-        bst.insert(node1, node4);
-        bst.insert(node1, node5);
+        BST bst = new BST(node3);
+        bst.insert(node3, node1);
+        bst.insert(node3, node2);
+        bst.insert(node3, node5);
+        bst.insert(node3, node4);
 
-        System.out.println(node3.parent.element);
+        System.out.println(bst.inorder(node3));
     }
 }
