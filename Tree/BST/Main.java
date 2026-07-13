@@ -13,7 +13,7 @@ public class Main {
         bst.insert(node3, node2);
         bst.insert(node3, node5);
         bst.insert(node3, node4);
-
+        bst.delete(node3);
         System.out.println(bst.inorder(node3));
     }
 }
