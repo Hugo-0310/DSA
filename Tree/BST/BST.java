@@ -6,6 +6,7 @@ public class BST {
     int size;
 
     public BST(Node root){
+        this.size = 1;
         this.root = root;
     }
 
@@ -20,10 +21,8 @@ public class BST {
             if(root.element > newNode.element){
                 //make sure to return the root.left if not changed
                 root.left = insert(root.left, newNode);
-                root.left.parent = root;
             }else{
                 root.right = insert(root.right, newNode);
-                root.right.parent = root;
             }
             return root;
         }
