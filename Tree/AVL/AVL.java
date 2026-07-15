@@ -79,7 +79,7 @@ public class AVL {
     }
 
     public String inorder(Node root){
-        if(isExternal(root)){
+        if(root.isExternal()){
             return String.valueOf(root.element);
         }else{
             if(root.left != null & root.right != null){
@@ -92,13 +92,6 @@ public class AVL {
                 }
             }
         }
-    }
-
-
-
-
-    public boolean isExternal(Node node){
-        return (node.left == null) & (node.right == null);
     }
     
 }
