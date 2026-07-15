@@ -18,7 +18,7 @@ public class Main {
         avl.insert(node4, node2);
         avl.insert(node4, node1);
 
-        System.out.println(node3.height());
+        System.out.println(node6.balance());
 
     }
 }

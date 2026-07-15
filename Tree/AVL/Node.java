@@ -24,6 +24,20 @@ public class Node {
         }
     }
 
+    public int balance(){
+        if(isExternal()){
+            return 0;
+        }else if(this.right != null & this.left != null){
+            return Math.abs(this.left.height() - this.right.height());
+        }else{
+            if(this.right != null){
+                return 1+this.right.height();
+            }else{
+                return 1+this.left.height();
+            }
+        }
+    }
+
     public boolean isExternal(){
         return (this.right == null)&(this.left == null);
     }
