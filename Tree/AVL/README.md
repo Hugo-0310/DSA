@@ -1,0 +1,1 @@
+this binary search tree balances itself by rotating the nodes around. The goal of rotation is to keep the worst case time complexity within O(logn) since the height of the tree can be at most log(n). The worst case time complexity would be much smaller than the regular binary search tree. 
