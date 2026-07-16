@@ -10,7 +10,10 @@ public class AVL {
         this.root = root;
     }
 
-    public Node insert(Node root, Node newNode){
+    public Node insert(Node newNode){
+        return insert(this.root, newNode);
+    }
+    private Node insert(Node root, Node newNode){
         if(root == null){
             if(this.root == null){
                 this.root = newNode;
@@ -112,7 +115,6 @@ public class AVL {
     }
 
     private Node applyRotation(Node node){
-        System.out.println("Balance here: " + node.balance());
         if(node.balance() > 1){
             if(node.right != null){
                 //left-right case
@@ -121,7 +123,6 @@ public class AVL {
                 }
             }
             //left-left case
-            System.out.println("rotateR");
             return rotateR(node);
         }else if(node.balance() < -1){
             if(node.left != null){
@@ -131,7 +132,6 @@ public class AVL {
                 }
             }
             //right-right case
-            System.out.println("rotateL");
             return rotateL(node);
         }else{
             return node;

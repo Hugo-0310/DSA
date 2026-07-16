@@ -13,14 +13,15 @@ public class Main {
         Node node8 = new Node(8);
 
         AVL avl = new AVL(node4);
-        avl.insert(node4, node3);
-        avl.insert(node4, node2);
-        avl.insert(node3, node1);
-        avl.insert(node3, node5);
-        avl.insert(node3, node6);
-        avl.insert(node3, node8);
+        avl.insert(node3);
+        avl.insert(node2);
+        avl.insert(node1);
+        avl.insert(node5);
+        avl.insert(node6);
+        avl.insert(node8);
         System.out.println("delete");
         avl.delete(node4);
+        System.out.println(avl.root.element);
         System.out.println(avl.inorder(avl.root));
 
     }
