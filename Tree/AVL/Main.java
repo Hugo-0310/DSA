@@ -22,7 +22,7 @@ public class Main {
         System.out.println("delete");
         avl.delete(node4);
         System.out.println(avl.root.element);
-        System.out.println(avl.inorder(avl.root));
+        avl.inorder();
 
     }
 }

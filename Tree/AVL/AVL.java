@@ -98,7 +98,11 @@ public class AVL {
         return curr;
     }
 
-    public String inorder(Node root){
+    public void inorder(){
+        System.out.println(inorder(this.root));
+    }
+
+    private String inorder(Node root){
         if(root.isExternal()){
             return String.valueOf(root.element);
         }else{
