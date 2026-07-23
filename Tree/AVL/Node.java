@@ -4,36 +4,45 @@ public class Node {
     int element;
     Node left;
     Node right;
+    int height;
 
     public Node(int element){
         this.element = element;
         this.left = this.right = null;
+        this.height = 0;
     }
 
-    public int height(){
+    public void height(){
         if(isExternal()){
-            return 0;
-        }else if(this.right != null & this.left != null){
-            return 1 + Math.max(this.right.height(), this.left.height());
+            this.height = 0;
         }else{
-            if(this.right != null){
-                return 1 + this.right.height();
+            if(this.left != null & this.right != null){
+                if(Math.max(left.height, right.height)+1 < this.height){
+                    this.height -= 1;
+                }
+            }else if(this.left != null){
+                if(this.left.height + 1 < this.height){
+                    this.height -= 1;
+                }
             }else{
-                return 1 + this.left.height();
+                if(this.right.height + 1 < this.height){
+                    this.height -= 1;
+                }
             }
         }
     }
+            
 
     public int balance(){
         if(isExternal()){
             return 0;
         }else if(this.right != null & this.left != null){
-            return Math.abs(this.left.height() - this.right.height());
+            return this.left.height - this.right.height;
         }else{
             if(this.right != null){
-                return 1+this.right.height();
+                return -1-this.right.height;
             }else{
-                return 1+this.left.height();
+                return 1+this.left.height;
             }
         }
     }

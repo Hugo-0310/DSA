@@ -2,6 +2,7 @@ package Tree.AVL;
 
 public class Main {
     public static void main(String [] args){
+        Node node0 = new Node(0);
         Node node1 = new Node(1);
         Node node2 = new Node(2);
         Node node3 = new Node(3);
@@ -9,16 +10,19 @@ public class Main {
         Node node5 = new Node(5);
         Node node6 = new Node(6);
         Node node7 = new Node(7);
+        Node node8 = new Node(8);
 
         AVL avl = new AVL(node4);
-        avl.insert(node4, node6);
-        avl.insert(node4, node3);
-        avl.insert(node4, node7);
-        avl.insert(node4, node5);
-        avl.insert(node4, node2);
-        avl.insert(node4, node1);
-
-        System.out.println(node6.balance());
+        avl.insert(node3);
+        avl.insert(node2);
+        avl.insert(node1);
+        avl.insert(node5);
+        avl.insert(node6);
+        avl.insert(node8);
+        System.out.println("delete");
+        avl.delete(node4);
+        System.out.println(avl.root.element);
+        avl.inorder();
 
     }
 }
