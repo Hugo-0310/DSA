@@ -1,0 +1,1 @@
+only takes integar input
