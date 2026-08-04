@@ -11,5 +11,6 @@ public class Main {
         String[] names2 = hash.sort(names);
 
         System.out.println(Arrays.toString(names2));
+        System.out.println(hash.contains(names2, "huo"));
     }
 }

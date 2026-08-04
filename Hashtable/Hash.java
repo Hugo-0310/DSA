@@ -22,10 +22,20 @@ public class Hash {
             int code = s.codePointAt(i);
             x += code;
         }
-
-        System.out.println(s+"'s hashcode is: "+x%10);
         return x%10;
     }
 
+    public String contains(String[] arr, String s){
+        int index = hash(s);
+        if(arr[index] == null){
+            return "The hashtable does not contain the name: "+s;
+        }else{
+            if(arr[index].equals(s)){
+                return "The hashtable contains the name: "+s;
+            }else{
+                return "The hashtable does not contain the name: "+s;
+            }
+        }
+    }
 
 }
