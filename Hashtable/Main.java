@@ -6,11 +6,15 @@ public class Main {
 
         Hash hash = new Hash();
         
-        String[] names = {"hugo", "leo", "max"};
+        Node node1 = new Node("Hugo");
+        Node node2 = new Node("Max");
+        Node node3 = new Node("Leo");
 
-        String[] names2 = hash.sort(names);
+        Node[] names = {node1, node2, node3};
+        Node[] names2 = hash.sort(names);
 
         System.out.println(Arrays.toString(names2));
-        System.out.println(hash.contains(names2, "huo"));
+        System.out.println(hash.contains(names2, "Hugo"));
     }
 }
+
